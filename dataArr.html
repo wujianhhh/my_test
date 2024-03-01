@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Data Display</title>
+</head>
+<body>
+  <pre id="json-data"></pre>
+
+  <script>
+    fetch('dataArr.json')
+      .then(response => response.json())
+      .then(json => {
+        document.getElementById('json-data').textContent = JSON.stringify(json, null, 2);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
